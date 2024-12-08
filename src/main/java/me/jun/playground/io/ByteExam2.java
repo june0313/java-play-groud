@@ -3,18 +3,19 @@ package me.jun.playground.io;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class ByteExam1 {
+public class ByteExam2 {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
         try (
                 FileInputStream fis = new FileInputStream("src/main/java/me/jun/playground/io/ByteExam1.java");
-                FileOutputStream fos = new FileOutputStream("byte.text")
+                FileOutputStream fos = new FileOutputStream("byte2.text")
         ) {
-            int readData;
-
-            while ((readData = fis.read()) != -1) {
-                fos.write(readData);
+            int readCount;
+            byte[] buffer = new byte[512];
+            while ((readCount = fis.read(buffer)) != -1) {
+                System.out.println("Read " + readCount + " bytes");
+                fos.write(buffer, 0, readCount);
             }
 
         } catch (Exception e) {
