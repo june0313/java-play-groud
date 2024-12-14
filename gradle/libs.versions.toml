@@ -1,0 +1,15 @@
+[versions]
+spring-boot = '3.4.0'
+spring-dependency-management = '1.1.6'
+
+[plugins]
+java = { id = 'java' }
+spring-boot = { id = 'org.springframework.boot', version.ref = 'spring-boot' }
+spring-dependency-management = { id = 'io.spring.dependency-management', version.ref = 'spring-dependency-management' }
+
+[libraries]
+reactor-test = { group = 'io.projectreactor', name = 'reactor-test' }
+lombok = { group = 'org.projectlombok', name = 'lombok' }
+spring-boot-starter-webflux = { group = 'org.springframework.boot', name = 'spring-boot-starter-webflux' }
+spring-boot-starter-test = { group = 'org.springframework.boot', name = 'spring-boot-starter-test' }
+junit-platform-luancher = { group = 'org.junit.platform', name = 'junit-platform-launcher' }

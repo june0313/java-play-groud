@@ -1,19 +1,37 @@
 plugins {
-    id 'java'
+    alias(libs.plugins.java)
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
 }
 
-group = 'me.jun'
-version = '1.0-SNAPSHOT'
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation libs.spring.boot.starter.webflux
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    testImplementation libs.spring.boot.starter.test
+    testImplementation libs.reactor.test
+    testRuntimeOnly libs.junit.platform.luancher
 }
 
-test {
+tasks.named('test') {
     useJUnitPlatform()
 }
