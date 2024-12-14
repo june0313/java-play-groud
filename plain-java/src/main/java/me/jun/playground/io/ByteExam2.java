@@ -8,7 +8,7 @@ public class ByteExam2 {
         long startTime = System.currentTimeMillis();
 
         try (
-                FileInputStream fis = new FileInputStream("src/main/java/me/jun/playground/io/ByteExam1.java");
+                FileInputStream fis = new FileInputStream("plain-java/src/main/java/me/jun/playground/io/ByteExam1.java");
                 FileOutputStream fos = new FileOutputStream("byte2.text")
         ) {
             int readCount;

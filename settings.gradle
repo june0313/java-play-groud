@@ -1,2 +1,3 @@
 rootProject.name = 'java-play-ground'
-
+include "plain-java"
+include "reactive"
