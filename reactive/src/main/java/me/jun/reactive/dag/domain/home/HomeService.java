@@ -1,11 +1,11 @@
-package me.jun.reactive.dag.home;
+package me.jun.reactive.dag.domain.home;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import me.jun.reactive.dag.member.Member;
-import me.jun.reactive.dag.member.MemberService;
-import me.jun.reactive.dag.product.Product;
-import me.jun.reactive.dag.product.ProductService;
+import me.jun.reactive.dag.domain.product.Product;
+import me.jun.reactive.dag.domain.product.ProductService;
+import me.jun.reactive.dag.domain.member.Member;
+import me.jun.reactive.dag.domain.member.MemberService;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;

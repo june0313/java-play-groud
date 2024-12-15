@@ -1,4 +1,4 @@
-package me.jun.reactive.dag.product;
+package me.jun.reactive.dag.domain.product;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

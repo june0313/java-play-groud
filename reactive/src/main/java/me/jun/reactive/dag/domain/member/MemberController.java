@@ -1,4 +1,4 @@
-package me.jun.reactive.dag.member;
+package me.jun.reactive.dag.domain.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
