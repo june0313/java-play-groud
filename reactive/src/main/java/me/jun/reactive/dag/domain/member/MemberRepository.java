@@ -13,7 +13,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class MemberRepository {
     private static final Map<Long, Member> MEMBER_DB = Map.of(
-            1L, Member.of(1L, "wayne")
+            1L, Member.of(1L, "wayne", 100L)
     );
 
     private final DelaySimulator delaySimulator;
