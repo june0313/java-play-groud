@@ -23,11 +23,11 @@ public class HomeService {
     private final ProductService productService;
     private final BannerService bannerService;
 
-    public Mono<Home> getHome() {
+    public Mono<Home> getHome(RequestContext context) {
         return Mono.zip(
-                        memberService.getMember(),
-                        productService.getProducts(),
-                        bannerService.getBanners()
+                        memberService.getMember(context.memberId()),
+                        productService.getProducts(context.query()),
+                        bannerService.getBanners(context.memberId())
                 )
                 .publishOn(Schedulers.parallel())
                 .map(this::aggregate);

@@ -11,10 +11,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BannerService {
     private final MemberService memberService;
-    private final BannerRepository bannerRepository;
+    private final BannerReactiveDataClient bannerReactiveDataClient;
 
-    public Mono<List<Banner>> getBanners() {
-        return memberService.getMember()
-                .map(member -> bannerRepository.findBannerByMemberId(member.segmentId()));
+    public Mono<List<Banner>> getBanners(Long memberId) {
+        return memberService.getMember(memberId)
+                .flatMap(member -> bannerReactiveDataClient.get(member.segmentId()));
     }
 }
