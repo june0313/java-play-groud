@@ -1,6 +1,7 @@
 package me.jun.reactive.dag.domain.member;
 
 import lombok.RequiredArgsConstructor;
+import me.jun.reactive.dag.infrastructure.dataclient.Context;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,6 @@ public class MemberController {
 
     @GetMapping("/member/{memberId}")
     public Mono<Member> member(@PathVariable Long memberId) {
-        return memberService.getMember(memberId);
+        return memberService.getMember(memberId, new Context());
     }
 }

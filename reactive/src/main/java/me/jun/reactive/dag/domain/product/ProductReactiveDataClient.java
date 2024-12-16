@@ -23,7 +23,7 @@ public class ProductReactiveDataClient extends BlockingToReactiveDataClient<Stri
     private final DelaySimulator delaySimulator;
 
     @Override
-    protected List<Product> blockingGet(String request) {
+    protected List<Product> blockingGet(String query) {
         log.info("finding products...");
         delaySimulator.delay(Duration.ofSeconds(1));
         log.info("found products.");

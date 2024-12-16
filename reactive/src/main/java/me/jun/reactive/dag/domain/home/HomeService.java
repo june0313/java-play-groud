@@ -8,6 +8,7 @@ import me.jun.reactive.dag.domain.member.Member;
 import me.jun.reactive.dag.domain.member.MemberService;
 import me.jun.reactive.dag.domain.product.Product;
 import me.jun.reactive.dag.domain.product.ProductService;
+import me.jun.reactive.dag.infrastructure.dataclient.Context;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
@@ -23,11 +24,11 @@ public class HomeService {
     private final ProductService productService;
     private final BannerService bannerService;
 
-    public Mono<Home> getHome(RequestContext context) {
+    public Mono<Home> getHome(RequestContext request, Context context) {
         return Mono.zip(
-                        memberService.getMember(context.memberId()),
-                        productService.getProducts(context.query()),
-                        bannerService.getBanners(context.memberId())
+                        memberService.getMember(request.memberId(), context),
+                        productService.getProducts(request.query(), context),
+                        bannerService.getBanners(request.memberId(), context)
                 )
                 .publishOn(Schedulers.parallel())
                 .map(this::aggregate);
