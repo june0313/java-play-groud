@@ -10,7 +10,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Context {
     private final Map<Class<?>, Mono<?>> cache = new ConcurrentHashMap<>();
 
-    public Mono<?> fromCacheIfAbsent(Class<?> clazz, Mono<?> mono) {
-        return this.cache.computeIfAbsent(clazz, k -> mono);
+    public Mono<?> get(Class<?> clazz) {
+        return cache.get(clazz);
+    }
+
+    public void put(Class<?> clazz, Mono<?> mono) {
+        cache.put(clazz, mono);
     }
 }
