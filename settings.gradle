@@ -1,3 +1,11 @@
 rootProject.name = 'java-play-ground'
+
 include "plain-java"
 include "reactive"
+
+include "modular-application"
+
+['module-a', 'module-member'].each { subModuleName ->
+    include(subModuleName)
+    project(":${subModuleName}").projectDir = file("modules/${subModuleName}")
+}

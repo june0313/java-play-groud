@@ -9,6 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/modular-application" />
+            <option value="$PROJECT_DIR$/modules/module-a" />
+            <option value="$PROJECT_DIR$/modules/module-member" />
             <option value="$PROJECT_DIR$/plain-java" />
             <option value="$PROJECT_DIR$/reactive" />
           </set>
