@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/modules/module-member" />
             <option value="$PROJECT_DIR$/plain-java" />
             <option value="$PROJECT_DIR$/reactive" />
+            <option value="$PROJECT_DIR$/spring-graphql" />
           </set>
         </option>
       </GradleProjectSettings>

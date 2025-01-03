@@ -9,3 +9,5 @@ include "modular-application"
     include(subModuleName)
     project(":${subModuleName}").projectDir = file("modules/${subModuleName}")
 }
+include 'spring-graphql'
+

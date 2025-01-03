@@ -1,0 +1,42 @@
+plugins {
+    alias(libs.plugins.java)
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+
+    implementation libs.spring.boot.starter.graphql
+    implementation libs.spring.boot.starter.web
+
+    testImplementation libs.spring.boot.starter.test
+    testImplementation libs.spring.boot.starter.webflux
+    testImplementation libs.spring.graphql.test
+
+    testRuntimeOnly libs.junit.platform.luancher
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
