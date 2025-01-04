@@ -27,6 +27,7 @@ dependencies {
     compileOnly libs.lombok
     annotationProcessor libs.lombok
 
+    implementation libs.spring.boot.starter.actuator
     implementation libs.spring.boot.starter.graphql
     implementation libs.spring.boot.starter.web
 

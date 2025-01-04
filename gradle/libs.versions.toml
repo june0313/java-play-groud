@@ -13,6 +13,7 @@ lombok = { group = 'org.projectlombok', name = 'lombok' }
 spring-boot-starter-webflux = { group = 'org.springframework.boot', name = 'spring-boot-starter-webflux' }
 spring-boot-starter-web = { module = 'org.springframework.boot:spring-boot-starter-web' }
 spring-boot-starter-graphql = { module = 'org.springframework.boot:spring-boot-starter-graphql' }
+spring-boot-starter-actuator = { module = 'org.springframework.boot:spring-boot-starter-actuator' }
 
 spring-boot-starter-test = { group = 'org.springframework.boot', name = 'spring-boot-starter-test' }
 spring-graphql-test = { module = 'org.springframework.graphql:spring-graphql-test' }
