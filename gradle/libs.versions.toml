@@ -6,6 +6,7 @@ spring-dependency-management = '1.1.6'
 java = { id = 'java' }
 spring-boot = { id = 'org.springframework.boot', version.ref = 'spring-boot' }
 spring-dependency-management = { id = 'io.spring.dependency-management', version.ref = 'spring-dependency-management' }
+netflix-dgs-codegen = { id = 'com.netflix.dgs.codegen', version = '7.0.3' }
 
 [libraries]
 reactor-test = { group = 'io.projectreactor', name = 'reactor-test' }

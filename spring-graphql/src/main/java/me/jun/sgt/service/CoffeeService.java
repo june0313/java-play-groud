@@ -1,8 +1,10 @@
 package me.jun.sgt.service;
 
 import jakarta.annotation.PostConstruct;
-import me.jun.sgt.model.Coffee;
-import me.jun.sgt.model.Size;
+
+
+import me.jun.sgt.codegen.types.Coffee;
+import me.jun.sgt.codegen.types.Size;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

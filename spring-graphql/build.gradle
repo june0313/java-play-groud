@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.java)
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.netflix.dgs.codegen)
 }
 
 group = 'com.example'
@@ -37,6 +38,13 @@ dependencies {
 
     testRuntimeOnly libs.junit.platform.luancher
 }
+
+generateJava {
+    schemaPaths = ["${projectDir}/src/main/resources/graphql"]
+    packageName = 'me.jun.sgt.codegen'
+    generateClient = true
+}
+
 
 tasks.named('test') {
     useJUnitPlatform()

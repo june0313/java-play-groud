@@ -1,7 +1,7 @@
 package me.jun.sgt.controller;
 
 import lombok.RequiredArgsConstructor;
-import me.jun.sgt.model.Coffee;
+import me.jun.sgt.codegen.types.Coffee;
 import me.jun.sgt.service.CoffeeService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
