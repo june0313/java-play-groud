@@ -1,8 +1,14 @@
 type Query {
+    getUser(userId: ID!): User!
+    getProducts: [Product!]!
+    getUserCart(userId: ID!): Cart!
+    search(keyword: String!): [SearchResult!]!
     getAllCoffees: [Coffee!]!
     getCoffeeById(id: Int!): Coffee
     hello: String
 }
+
+union SearchResult = User | Electronics | Clothing
 
 type Coffee {
     id: Int!

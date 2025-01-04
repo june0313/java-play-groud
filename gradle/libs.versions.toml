@@ -11,6 +11,7 @@ netflix-dgs-codegen = { id = 'com.netflix.dgs.codegen', version = '7.0.3' }
 [libraries]
 reactor-test = { group = 'io.projectreactor', name = 'reactor-test' }
 lombok = { group = 'org.projectlombok', name = 'lombok' }
+graphql-java-extended-scalars = { module = 'com.graphql-java:graphql-java-extended-scalars', version = '22.0' }
 spring-boot-starter-webflux = { group = 'org.springframework.boot', name = 'spring-boot-starter-webflux' }
 spring-boot-starter-web = { module = 'org.springframework.boot:spring-boot-starter-web' }
 spring-boot-starter-graphql = { module = 'org.springframework.boot:spring-boot-starter-graphql' }
