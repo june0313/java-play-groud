@@ -2,6 +2,7 @@ type CartItem {
     id: ID!
     product: Product!
     quantity: Int!
+    cart: Cart!
 }
 
 type Cart {
