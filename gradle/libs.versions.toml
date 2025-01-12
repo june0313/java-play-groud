@@ -20,3 +20,5 @@ spring-boot-starter-actuator = { module = 'org.springframework.boot:spring-boot-
 spring-boot-starter-test = { group = 'org.springframework.boot', name = 'spring-boot-starter-test' }
 spring-graphql-test = { module = 'org.springframework.graphql:spring-graphql-test' }
 junit-platform-luancher = { group = 'org.junit.platform', name = 'junit-platform-launcher' }
+
+assertj-core = { module = 'org.assertj:assertj-core', version = '3.6.1' }
