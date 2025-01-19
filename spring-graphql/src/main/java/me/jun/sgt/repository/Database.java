@@ -20,6 +20,7 @@ public class Database {
                 Electronics.newBuilder().id("1").productType(ProductType.ELECTRONICS).name("mac book air").price(1000.0).warrantyPeriod("3years").build(),
                 Electronics.newBuilder().id("2").productType(ProductType.ELECTRONICS).name("iphone 19").price(2000.0).warrantyPeriod("2years").build(),
                 Electronics.newBuilder().id("3").productType(ProductType.ELECTRONICS).name("samsung tv").price(3000.0).warrantyPeriod("1years").build(),
+
                 Clothing.newBuilder().id("4").productType(ProductType.CLOTHING).name("T-shirt").price(300.0).size("M").build(),
                 Clothing.newBuilder().id("5").productType(ProductType.CLOTHING).name("Jeans").price(200.0).size("L").build(),
                 Clothing.newBuilder().id("6").productType(ProductType.CLOTHING).name("Dress").price(100.0).size("S").build()
@@ -32,7 +33,7 @@ public class Database {
 
         carts = new ArrayList<>(List.of(
                 Cart.newBuilder().id("1").user(users.get(0)).build(),
-                Cart.newBuilder().id("1").user(users.get(1)).build()
+                Cart.newBuilder().id("2").user(users.get(1)).build()
         ));
 
         cartItems = new ArrayList<>(List.of(

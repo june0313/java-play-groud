@@ -1,9 +1,7 @@
 package me.jun.sgt.service;
 
 import lombok.RequiredArgsConstructor;
-import me.jun.sgt.codegen.types.Cart;
-import me.jun.sgt.codegen.types.CartItem;
-import me.jun.sgt.codegen.types.User;
+import me.jun.sgt.codegen.types.*;
 import me.jun.sgt.repository.Database;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +12,25 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CartService {
     private final Database database;
+    private final ProductService productService;
+
+    public Cart addCartItem(AddCartItemInput input) {
+        CartItem cartItem = CartItem.newBuilder()
+                .id(UUID.randomUUID().toString().substring(0, 5))
+                .quantity(input.getQuantity())
+                .product(productService.getProduct(input.getProductId()))
+                .cart(getUserCart(input.getUserId()))
+                .build();
+
+        database.cartItems.add(cartItem);
+
+        return getUserCart(input.getUserId());
+    }
+
+    public Cart deleteCartItem(DeleteCartItemInput input) {
+        database.cartItems.removeIf(cartItem -> cartItem.getId().equals(input.getCartItemId()));
+        return getUserCart(input.getUserId());
+    }
 
     public Cart addUserCart(User user) {
         Cart cart = Cart.newBuilder()
